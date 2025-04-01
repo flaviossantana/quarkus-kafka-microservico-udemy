@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 @Jacksonized
 @AllArgsConstructor
-public class QuatationDTO {
+public class QuotationDTO {
 
     private Date date;
     private BigDecimal currencyPrice;
