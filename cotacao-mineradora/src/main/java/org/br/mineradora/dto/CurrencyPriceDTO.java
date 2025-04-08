@@ -1,5 +1,6 @@
 package org.br.mineradora.dto;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.extern.jackson.Jacksonized;
 @AllArgsConstructor
 public class CurrencyPriceDTO {
 
+    @JsonAlias(value = "USDBRL")
     private USDBRL usdbrl;
 
 }
