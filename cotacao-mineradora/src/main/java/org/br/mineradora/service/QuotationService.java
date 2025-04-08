@@ -39,6 +39,8 @@ public class QuotationService {
 
         CurrencyPriceDTO currencyPriceInfo = currencyPriceClient.getPriceByPair(pairCode);
 
+        log.info("RETORNO SERVIÇO DE COTAÇÃO: {}", currencyPriceInfo);
+
         if (updateCurrencyInfoPrice(currencyPriceInfo.getUsdbrl())) {
             messageEvents.sendNewEvent(
                     QuotationDTO
