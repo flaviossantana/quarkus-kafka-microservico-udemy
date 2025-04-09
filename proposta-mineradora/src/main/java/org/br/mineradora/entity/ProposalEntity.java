@@ -6,14 +6,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "proposal")
 public class ProposalEntity {
 
@@ -25,8 +30,9 @@ public class ProposalEntity {
     private BigDecimal priceTonne;
 
     @Column(name = "proprosal_valid_days")
-    private Integer proprosalValidDays;
+    private Integer proposalValidityDays;
 
+    private Date created;
     private String costumer;
     private Integer tonnes;
     private String country;
