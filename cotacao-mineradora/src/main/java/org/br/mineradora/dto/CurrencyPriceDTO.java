@@ -13,6 +13,6 @@ import lombok.extern.jackson.Jacksonized;
 public class CurrencyPriceDTO {
 
     @JsonAlias(value = "USDBRL")
-    private USDBRL usdbrl;
+    private Usdbrl usdbrl;
 
 }

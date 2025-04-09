@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.br.mineradora.client.CurrencyPriceClient;
 import org.br.mineradora.dto.CurrencyPriceDTO;
 import org.br.mineradora.dto.QuotationDTO;
-import org.br.mineradora.dto.USDBRL;
+import org.br.mineradora.dto.Usdbrl;
 import org.br.mineradora.entity.QuotationEntity;
 import org.br.mineradora.message.MessageEvents;
 import org.br.mineradora.repository.QuotationRepository;
@@ -51,7 +51,7 @@ public class QuotationService {
         }
     }
 
-    private boolean updateCurrencyInfoPrice(USDBRL usdbrl) {
+    private boolean updateCurrencyInfoPrice(Usdbrl usdbrl) {
 
         BigDecimal currentPrice = new BigDecimal(usdbrl.getBid());
         AtomicBoolean updatePrice = new AtomicBoolean(false);
@@ -85,7 +85,7 @@ public class QuotationService {
         return updatePrice.get();
     }
 
-    private void saveQuotation(USDBRL usdbrl) {
+    private void saveQuotation(Usdbrl usdbrl) {
 
         QuotationEntity quotationEntity = new QuotationEntity();
 
