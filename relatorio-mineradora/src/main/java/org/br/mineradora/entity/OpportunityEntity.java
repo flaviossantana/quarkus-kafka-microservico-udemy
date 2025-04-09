@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +16,9 @@ import java.util.Date;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "opportunity")
 public class OpportunityEntity {
 
@@ -33,6 +37,6 @@ public class OpportunityEntity {
 
     private Date data;
 
-    private String consumer;
+    private String costumer;
 
 }
