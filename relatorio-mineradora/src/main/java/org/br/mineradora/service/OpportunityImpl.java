@@ -10,7 +10,9 @@ import org.br.mineradora.entity.OpportunityEntity;
 import org.br.mineradora.entity.QuotationEntity;
 import org.br.mineradora.repository.OpportunityRepository;
 import org.br.mineradora.repository.QuotationRepository;
+import org.br.mineradora.utils.CSVHelper;
 
+import java.io.ByteArrayInputStream;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -56,7 +58,26 @@ public class OpportunityImpl implements OpportunityService {
     }
 
     @Override
-    public List<OpportunityDTO> getOpportunities() {
+    public List<OpportunityDTO> generateOpportunitesData() {
         return List.of();
+    }
+
+    @Override
+    public ByteArrayInputStream generateCSVOpportunityReport() {
+
+        List<OpportunityDTO> opportunities = opportunityRepository
+                .findAll()
+                .list()
+                .parallelStream()
+                .map(o -> OpportunityDTO
+                        .builder()
+                        .proposalId(o.getProposalId())
+                        .costumer(o.getCostumer())
+                        .priceTonne(o.getPriceTonne())
+                        .lastDollarQuotation(o.getLastDollarQuotation())
+                        .build())
+                .toList();
+
+        return CSVHelper.opportunitiesCSV(opportunities);
     }
 }
