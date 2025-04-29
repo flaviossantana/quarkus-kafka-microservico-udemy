@@ -26,7 +26,7 @@ public class OpportuniteController {
     public Response generateReport() {
         try {
             return Response
-                    .ok(opportunityService.generateOpportunitesData(), MediaType.APPLICATION_OCTET_STREAM)
+                    .ok(opportunityService.generateCSVOpportunityReport(), MediaType.APPLICATION_OCTET_STREAM)
                     .header("Content-Disposition", String.format("attachment; filename=%s-opportunities-sales.txt", new Date()))
                     .build();
         } catch (Exception e) {
