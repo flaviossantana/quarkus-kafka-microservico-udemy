@@ -15,7 +15,7 @@ import java.util.Date;
 @Slf4j
 @RequestScoped
 @Path("/api/opportunity")
-public class OpportuniteController {
+public class OpportunityController {
 
     @Inject
     OpportunityService opportunityService;
