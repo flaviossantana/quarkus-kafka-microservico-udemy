@@ -16,3 +16,14 @@ services:
       - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
     depends_on:
       - zookeeper
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.2
+    environment:
+      - KC_HOSTNAME=localhost
+      - KC_HOSTNAME_PORT=7080
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - '7080:7080'
+      - '7443:7443'
