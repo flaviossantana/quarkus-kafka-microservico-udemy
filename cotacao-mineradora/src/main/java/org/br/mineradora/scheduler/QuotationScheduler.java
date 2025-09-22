@@ -14,7 +14,7 @@ public class QuotationScheduler {
     @Inject
     QuotationService quotationService;
 
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRED)
     @Scheduled(every = "35s", identity = "task-quotation-scheduler")
     public void schedule() {
 
