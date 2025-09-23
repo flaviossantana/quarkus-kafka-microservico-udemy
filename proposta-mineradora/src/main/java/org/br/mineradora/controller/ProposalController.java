@@ -1,5 +1,6 @@
 package org.br.mineradora.controller;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.DELETE;
@@ -27,6 +28,7 @@ public class ProposalController {
     }
 
     @POST
+    @RolesAllowed("manager")
     public Response createProposal(ProposalDetailDTO proposalDetailDTO) {
         try {
             log.info("Creating proposal {}", proposalDetailDTO);
