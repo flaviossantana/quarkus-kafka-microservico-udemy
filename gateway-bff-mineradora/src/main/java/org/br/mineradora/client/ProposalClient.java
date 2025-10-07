@@ -9,14 +9,12 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Response;
 import org.br.mineradora.dto.ProposalDetailDTO;
-import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @ApplicationScoped
-@RegisterRestClient
-@RegisterClientHeaders
 @Path("/api/proposal")
+@RegisterRestClient(configKey = "proposal-client-api")
 @RegisterProvider(AccessTokenRequestReactiveFilter.class)
 public interface ProposalClient {
 

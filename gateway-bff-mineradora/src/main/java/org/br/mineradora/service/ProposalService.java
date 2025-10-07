@@ -8,5 +8,5 @@ import org.br.mineradora.dto.ProposalDetailDTO;
 public interface ProposalService {
     ProposalDetailDTO findProposalDetailById(@PathParam("id") long proposalId);
     Response createProposal(ProposalDetailDTO proposalDetailDTO);
-    Response deleteProposal(long proposalId);
+    Response removeProposal(long proposalId);
 }
