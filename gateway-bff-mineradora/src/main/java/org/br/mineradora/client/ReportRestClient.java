@@ -14,7 +14,7 @@ import java.util.List;
 @Path("/api/opportunity")
 @RegisterRestClient(configKey = "report-client-api")
 @RegisterProvider(AccessTokenRequestReactiveFilter.class)
-public interface ReportClient {
+public interface ReportRestClient {
 
     @GET
     @Path("/data")
