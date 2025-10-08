@@ -12,7 +12,7 @@ import java.util.List;
 
 @ApplicationScoped
 @Path("/api/opportunity")
-@RegisterRestClient(configKey = "report-client-api")
+@RegisterRestClient
 @RegisterProvider(AccessTokenRequestReactiveFilter.class)
 public interface ReportRestClient {
 
