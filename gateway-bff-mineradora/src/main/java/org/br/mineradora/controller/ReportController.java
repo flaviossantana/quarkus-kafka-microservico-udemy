@@ -44,7 +44,7 @@ public class ReportController {
     public Response generateData() {
         try {
             return Response
-                    .ok(reportService.generateCSVROpportunities(), MediaType.APPLICATION_JSON)
+                    .ok(reportService.findAllOpportunities(), MediaType.APPLICATION_JSON)
                     .build();
         } catch (Exception e) {
             log.error(e.getMessage());
